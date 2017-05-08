@@ -1,0 +1,50 @@
+{
+  "queries": [
+    {
+      "groups": [
+        {
+          "filters": [
+            {
+              "type": "name",
+              "operation": "match",
+              "value": "I'm Bob",
+              "case_sensitive": false
+            },
+            {
+              "type": "difficulty",
+              "operation": "<",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "type": "name",
+              "operation": "match",
+              "value": "pizza",
+              "case_sensitive": false
+            },
+            {
+              "type": "rate",
+              "operation": ">",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "groups": [
+        {
+          "filters": [
+            {
+              "type": "vegeterian",
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

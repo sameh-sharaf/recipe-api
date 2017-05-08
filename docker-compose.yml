@@ -1,0 +1,30 @@
+version: '2'
+services:
+    app:
+        build: .
+        volumes:
+          - ./:/server/http
+
+        ports:
+            - "8080:8080"
+        links:
+            - postgres
+        environment:
+            DEBUG: 'true'
+            PORT: '8080'
+        env_file:
+            - example.env
+
+    postgres:
+        image: onjin/alpine-postgres:9.5
+        restart: unless-stopped
+        ports:
+            - "5432:5432"
+        environment:
+            LC_ALL: C.UTF-8
+            POSTGRES_USER: ####
+            POSTGRES_PASSWORD: ####
+            POSTGRES_DB: mydb
+
+volumes:
+  go:
